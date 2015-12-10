@@ -1,6 +1,6 @@
-package examenrefactcod;
+package Examencdrefac;
 
-public class ExamenRefactCOD {
+public class Examencdrefac {
 
     /**
      * @param args the command line arguments
