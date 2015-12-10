@@ -12,7 +12,7 @@ public class Examencdrefac {
     public static boolean p = false;
 
     public static void main(String arg[]) {
-        int dig = 3;
+        int dig = metodoatomico();
         int ndig = 0;
         if (dig <= 0) {
             System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
@@ -22,10 +22,7 @@ public class Examencdrefac {
 
             int contador = 0;
 
-            while (aux != 0) {
-                aux = aux / 10;
-                contador++;
-            }
+            contador = yanoatomico(aux, contador);
             ndig = contador;
 
             if (ndig == dig) {
@@ -42,19 +39,7 @@ public class Examencdrefac {
                             k--;
                         }
 
-                        while (i1 <= k) {
-                            if (i % i1 == 0) {
-                                contador1++;
-                            }
-                            i1 += 2;
-                            if (contador1 == 2) {
-                                i1 = k + 1;
-                            }
-                        }
-
-                        if (contador1 == 1) {
-                            p = true;
-                        }
+                        notanatomico(i1, k, i, contador1);
                     }
                 }
 
@@ -63,6 +48,35 @@ public class Examencdrefac {
                 }
             }
         }
+    }
+
+    public static int yanoatomico(int aux, int contador) {
+        while (aux != 0) {
+            aux = aux / 10;
+            contador++;
+        }
+        return contador;
+    }
+
+    public static void notanatomico(int i1, int k, int i, int contador1) {
+        while (i1 <= k) {
+            if (i % i1 == 0) {
+                contador1++;
+            }
+            i1 += 2;
+            if (contador1 == 2) {
+                i1 = k + 1;
+            }
+        }
+        
+        if (contador1 == 1) {
+            p = true;
+        }
+    }
+
+    public static int metodoatomico() {
+        int dig = 3;
+        return dig;
     }
 
 }
